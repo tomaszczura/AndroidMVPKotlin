@@ -1,7 +1,8 @@
-package com.softwareman.mvpkotlin
+package com.softwareman.mvpkotlin.view.activity
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import com.softwareman.mvpkotlin.R
 
 class MainActivity : AppCompatActivity() {
 
