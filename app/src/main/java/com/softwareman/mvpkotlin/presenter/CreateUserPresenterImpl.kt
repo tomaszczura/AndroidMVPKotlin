@@ -6,21 +6,7 @@ import com.softwareman.mvpkotlin.model.UserStore
 import com.softwareman.mvpkotlin.model.UserValidator
 import com.softwareman.mvpkotlin.view.CreateUserView
 
-class CreateUserPresenterImpl(var view: CreateUserView?): CreateUserPresenter {
-
-    override fun onCreate() {}
-
-    override fun onStart() {}
-
-    override fun onResume() {}
-
-    override fun onPause() {}
-
-    override fun onStop() {}
-
-    override fun onDestroy() {
-        view = null
-    }
+class CreateUserPresenterImpl(override var view: CreateUserView?): CreateUserPresenter<CreateUserView> {
 
     override fun saveUser(name: String, surname: String) {
         val user = User(name, surname)

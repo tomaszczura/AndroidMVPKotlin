@@ -16,7 +16,7 @@ import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity(), CreateUserView {
 
-    private val presenter: CreateUserPresenter by lazy {
+    private val presenter: CreateUserPresenter<CreateUserView> by lazy {
         CreateUserPresenterImpl(this)
     }
 
@@ -43,5 +43,9 @@ class MainActivity : AppCompatActivity(), CreateUserView {
 
     override fun showUserDetails(user: User) {
         startActivity<UserDetailsActivity>(USER_KEY to user) /* anko extension - starts UserDetailsActivity and pass user as USER_KEY in intent */
+    }
+
+    override fun onDestroy() {
+        presenter.onDestroy()
     }
 }

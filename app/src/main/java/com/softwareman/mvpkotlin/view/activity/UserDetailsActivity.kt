@@ -13,7 +13,7 @@ import org.jetbrains.anko.toast
 
 class UserDetailsActivity: AppCompatActivity(), UserDetailsView {
 
-    private val presenter: UserDetailsPresenter by lazy {
+    private val presenter: UserDetailsPresenter<UserDetailsView> by lazy {
         UserDetailsPresenterImpl(this)
     }
 

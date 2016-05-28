@@ -1,20 +1,20 @@
 package com.softwareman.mvpkotlin.presenter
 
 import com.softwareman.mvpkotlin.model.User
+import com.softwareman.mvpkotlin.view.View
 
-interface Presenter {
-    fun onCreate()
-    fun onStart()
-    fun onResume()
-    fun onPause()
-    fun onStop()
-    fun onDestroy()
+interface Presenter<T : View> {
+    var view: T?
+
+    fun onDestroy(){
+        view = null
+    }
 }
 
-interface CreateUserPresenter: Presenter {
+interface CreateUserPresenter<T : View>: Presenter<T> {
     fun saveUser(name: String, surname: String)
 }
 
-interface UserDetailsPresenter: Presenter {
+interface UserDetailsPresenter<T : View>: Presenter<T> {
     var user: User?
 }
