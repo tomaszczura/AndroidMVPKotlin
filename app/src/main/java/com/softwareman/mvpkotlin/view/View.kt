@@ -2,7 +2,7 @@ package com.softwareman.mvpkotlin.view
 
 import com.softwareman.mvpkotlin.model.User
 
-interface View{}
+interface View
 
 interface CreateUserView: View {
     fun showEmptyNameError() /* show error when name is empty */
