@@ -36,6 +36,7 @@ class UserDetailsActivity: AppCompatActivity(), UserDetailsView {
 
     override fun onDestroy() {
         presenter.onDestroy()
+        super.onDestroy();
     }
 
 }
