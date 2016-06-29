@@ -47,5 +47,6 @@ class MainActivity : AppCompatActivity(), CreateUserView {
 
     override fun onDestroy() {
         presenter.onDestroy()
+        super.onDestroy()
     }
 }
